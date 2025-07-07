@@ -1,0 +1,8 @@
+flask
+telebot
+python-dotenv
+pyTelegramBotAPI
+flask-sqlalchemy
+requests
+apscheduler
+pytz
