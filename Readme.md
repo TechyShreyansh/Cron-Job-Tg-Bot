@@ -79,3 +79,96 @@ Your bot will now run locally! 🎉
 You can deploy on **Koyeb**, **Heroku**, or any **Linux VPS**.  
 
 ---
+
+### ✅ Deploy on **Koyeb** (Recommended)  
+
+1. Push your code to **GitHub**  
+2. Go to [Koyeb Dashboard](https://www.koyeb.com/)  
+3. Click **Create Service → GitHub → Select Repo**  
+4. Add environment variables:  
+   - `BOT_TOKEN`  
+   - `AUTH_USER_ID`  
+5. Deploy & enjoy! 🚀  
+
+---
+
+### ✅ Deploy on **VPS / Ubuntu**  
+
+```bash
+sudo apt update && sudo apt install python3-pip -y
+git clone https://github.com/your-username/Cron-Job-Tg-Bot.git
+cd Cron-Job-Tg-Bot
+pip3 install -r requirements.txt
+export BOT_TOKEN=YOUR_TOKEN
+export AUTH_USER_ID=YOUR_ID
+nohup python3 main.py &
+```
+
+This will keep your bot running in the background.  
+
+---
+
+### ✅ Deploy on **Heroku**  
+
+1. Install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)  
+2. Create a new app  
+
+```bash
+heroku create your-bot-name
+```
+
+3. Push code  
+
+```bash
+git push heroku main
+```
+
+4. Add config vars  
+
+```bash
+heroku config:set BOT_TOKEN=YOUR_TOKEN AUTH_USER_ID=YOUR_ID
+```
+
+5. Scale worker  
+
+```bash
+heroku ps:scale worker=1
+```
+
+---
+
+## 💡 Usage  
+
+Once the bot is running:  
+
+- `/start` → Welcome message  
+- `/add <cron_expression> <command>` → Add a cron job  
+- `/list` → Show all scheduled jobs  
+- `/remove <job_id>` → Delete a job  
+- `/help` → Show help  
+
+---
+
+## 📸 Example  
+
+```
+/add * * * * * echo "Hello, Cron!"
+```
+
+➡ Runs every minute and sends output back to you.  
+
+---
+
+## 🤝 Contributing  
+
+PRs are welcome! Feel free to fork this repo and improve it.  
+
+---
+
+## 📜 License  
+
+This project is **MIT Licensed** – free to use, modify, and distribute.  
+
+---
+
+### 💙 Developed with ❤️ by [Tech-Shreyansh](https://github.com/TechyShreyansh)
